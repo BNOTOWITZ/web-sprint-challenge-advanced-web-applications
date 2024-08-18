@@ -1,15 +1,15 @@
-// 👉 DO NOT CHANGE THIS FILE 👈
-// 👉 DO NOT CHANGE THIS FILE 👈
-// 👉 DO NOT CHANGE THIS FILE 👈
-import React from 'react'
-import { render } from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
-import App from './components/App'
-import './styles/reset.css'
-import './styles/styles.css'
+// ✨ implement axiosWithAuth
+import axios from 'axios';
 
-render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-  , document.getElementById('root'))
+
+const axiosWithAuth = () => {
+    const token = localStorage.getItem('token');
+    return axios.create({
+        headers: {
+            'Authorization': token,
+            'Content-Type': 'application/json'
+        }
+    });
+}
+
+export default axiosWithAuth;
