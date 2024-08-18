@@ -1,15 +1,7 @@
-// ✨ implement axiosWithAuth
-import axios from 'axios';
+const server = require('./backend/server')
 
+const PORT = process.env.PORT || 9000
 
-const axiosWithAuth = () => {
-    const token = localStorage.getItem('token');
-    return axios.create({
-        headers: {
-            'Authorization': token,
-            'Content-Type': 'application/json'
-        }
-    });
-}
-
-export default axiosWithAuth;
+server.listen(PORT, () => {
+  console.log(`API listening on http://localhost:${PORT}`)
+})
