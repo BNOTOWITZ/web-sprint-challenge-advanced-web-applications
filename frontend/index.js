@@ -1,7 +1,16 @@
-import server from './backend/server';
+// 👉 DO NOT CHANGE THIS FILE 👈
+// 👉 DO NOT CHANGE THIS FILE 👈
+// 👉 DO NOT CHANGE THIS FILE 👈
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import App from './components/App'
+import './styles/reset.css'
+import './styles/styles.css'
 
-const PORT = process.env.PORT || 9000
-
-server.listen(PORT, () => {
-  console.log(`API listening on http://localhost:${PORT}`)
-})
+const root = createRoot(document.getElementById('root'))
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+)
