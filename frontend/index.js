@@ -1,4 +1,4 @@
-const server = require('./backend/server')
+import server from './backend/server';
 
 const PORT = process.env.PORT || 9000
 

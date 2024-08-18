@@ -1,14 +1,14 @@
-const express = require('express')
-const cors = require('cors')
-const path = require('path')
+import express from 'express';
+import cors from 'cors';
+import path from 'path';
 
-const help = require('./helpers')
-const delay = 1000
+import help from './helpers';
+const delay = 1000;
 
-const server = express()
-server.use(express.json())
-server.use(express.static(path.join(__dirname, '../dist')))
-server.use(cors())
+const server = express();
+server.use(express.json());
+server.use(express.static(path.join(__dirname, '../dist')));
+server.use(cors());
 // 1
 server.post('/api/login', async (req, res, next) => {
   try {
